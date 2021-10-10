@@ -65,8 +65,10 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 export BUNDLER_EDITOR=code
-export BROWSER='"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"'
-export BROWSER='"/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe"'
+export BROWSER='"/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe"'
 
+# Python Path to run local functions and packages
 export PYTHONPATH="/home/ouic/code/ouic/data-challenges/04-Decision-Science:$PYTHONPATH"
 export PYTHONPATH="/home/ouic/code/ouic/data-challenges:$PYTHONPATH"
+
+sudo /etc/init.d/postgresql start

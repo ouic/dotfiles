@@ -5,12 +5,18 @@ alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/m
 # Quickly serve the current directory as HTTP
 alias serve='ruby -run -e httpd . -p 8000' # Or python -m SimpleHTTPServer :)
 
-# NOTE: On Q3 2021, Le Wagon decided to change the Web Dev curriculum default text editor
-alias stt="echo 'Launching VS Code instead of Sublime Text... (cf ~/.aliases)' && code ."
+# Google cloud platform
+# export GOOGLE_APPLICATION_CREDENTIALS=/home/UBUNTU_USERNAME/code/GITHUB_NICKNAME/gcp/SERVICE_ACCOUNT_JSON_FILE_CONTAINING_YOUR_SECRET_KEY.json
+export GOOGLE_APPLICATION_CREDENTIALS=/home/ouic/code/ouic/google_cloud_platform/lewagon-317614-34e659d7face.json
 
-alias jn='jupyter notebook'
-alias ouic='cd; cd code; code .; jupyter notebook'
-alias wagon='cd; cd code/ouic'
-alias data='cd; cd code/ouic/data-challenges'
-alias web='cd; cd code/ouic/fullstack-challenges'
-alias commit='git status; git add .; git commit -m "update"; git push origin master'
+alias root="echo 'Positionnement dans le dossier -home- et démarrage de VisualStudioCode' && cd; code ."
+alias pull="echo 'Mise à jour de fichiers locaux' && git pull origin master"
+alias jn="echo 'Démarrage de Jupyter Notebook' && jupyter notebook"
+alias ouic="data && pull && web && pull && echo 'Démarrage de VisualStudioCode & Jupyter Notebook' && cd ~/code && code . && jupyter notebook"
+alias wagon="echo 'Positionnement dans le dossier -ouic-' && cd ~/code/ouic"
+alias data="echo 'Positionnement dans le dossier -data-challenges-' && cd ~/code/ouic/data-challenges"
+alias web="echo 'Positionnement dans le dossier -fullstack-challenges-' && cd ~/code/ouic/fullstack-challenges"
+alias commit="echo 'Mise à jour des fichiers sur GitHub' && git status; git add .; git commit -m "update"; git push origin master"
+alias test="clear; rake"
+alias bye="kill $(pgrep bash)"
+alias bye2="kill -9 $(pgrep bash)"
