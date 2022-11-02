@@ -22,7 +22,7 @@ type -a rbenv > /dev/null && eval "$(rbenv init -)"
 
 # Load pyenv (to manage your Python versions)
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && RPROMPT+='[🐍 $(pyenv_prompt_info)]'
+type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init - 2> /dev/null)" && RPROMPT+='[🐍 $(pyenv version-name)]'
 
 # Load nvm (to manage your node versions)
 export NVM_DIR="$HOME/.nvm"
@@ -66,9 +66,11 @@ export LC_ALL=en_US.UTF-8
 
 export BUNDLER_EDITOR=code
 export BROWSER='"/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe"'
+export EDITOR=code
 
 # Python Path to run local functions and packages
 export PYTHONPATH="/home/ouic/code/ouic/data-challenges/04-Decision-Science:$PYTHONPATH"
 export PYTHONPATH="/home/ouic/code/ouic/data-challenges:$PYTHONPATH"
 
 sudo /etc/init.d/postgresql start
+eval "$(direnv hook zsh)"
